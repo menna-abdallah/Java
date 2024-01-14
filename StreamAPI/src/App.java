@@ -56,7 +56,7 @@ countries.values().forEach(country ->
         capitals.add(worldDao.findCityById(country.getCapital())));
         
 City highest = capitals.stream().filter(Objects::nonNull)
-                    .max(Comparator.comparing(City::getPopulation))
+                    .max(Comparator.comparing(City::getPopulation)) // method is used to specify the property
                     .orElse(null);
 System.out.println(highest.getName());
 System.out.println(highest.getPopulation());
